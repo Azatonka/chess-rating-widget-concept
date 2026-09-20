@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess.com Mobile Widgets Concept (2x2 & 4x2)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #121214;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    /* -------------------------------------------------- */
+    /* 1. КОМПАКТНЫЙ ВИДЖЕТ 2x2 (Фирменный Зелёный Стиль) */
+    /* -------------------------------------------------- */
+    .widget-2x2 {
+      width: 170px;
+      height: 170px;
+      background: linear-gradient(145deg, #6c9e38 0%, #4a7522 100%);
+      border-radius: 28px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      color: #ffffff;
+    }
+
+    .widget-2x2 .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .widget-2x2 .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .widget-2x2 .username {
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .widget-2x2 .stats-card {
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .widget-2x2 .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .widget-2x2 .stat-label {
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    /* -------------------------------------------------- */
+    /* 2. РАСШИРЕННЫЙ ВИДЖЕТ 4x2                         */
+    /* -------------------------------------------------- */
+    .widget-4x2 {
+      width: 360px;
+      height: 170px;
+      background: #1e1f23;
+      border: 2px solid #6c9e38;
+      border-radius: 28px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .widget-4x2 .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .widget-4x2 .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid #6c9e38;
+    }
+
+    .widget-4x2 .user-details h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .widget-4x2 .user-details span {
+      font-size: 12px;
+      color: #81b64c;
+      font-weight: 600;
+    }
+
+    .widget-4x2 .stats-row {
+      display: flex;
+      justify-content: space-between;
+      background: #141518;
+      padding: 12px 18px;
+      border-radius: 16px;
+      border: 1px solid #2d2f36;
+    }
+
+    .widget-4x2 .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .widget-4x2 .stat-item .label {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .widget-4x2 .stat-item .val {
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    /* Акцентные цвета видов спорта */
+    .rapid-color { color: #81b64c; }
+    .blitz-color { color: #ffb400; }
+    .bullet-color { color: #e63946; }
+
+    .widget-4x2 .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #777;
+    }
+
+    .widget-4x2 .play-btn {
+      background: #81b64c;
+      color: #ffffff;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(129, 182, 76, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Блок 1: Виджет 2х2 -->
+  <div>
+    <h2>Виджет 2x2 (Фирменный Зеленый)</h2>
+    <div class="widget-2x2">
+      <div class="header">
+        <img id="avatar-2x2" class="avatar" src="" alt="Avatar">
+        <span id="username-2x2" class="username">Загрузка...</span>
+      </div>
+
+      <div class="stats-card">
+        <div class="stat-row">
+          <span class="stat-label">⚡ Рапид</span>
+          <span id="rapid-2x2">-</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">🔥 Блиц</span>
+          <span id="blitz-2x2">-</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">🎯 Пуля</span>
+          <span id="bullet-2x2">-</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Блок 2: Виджет 4х2 -->
+  <div>
+    <h2>Виджет 4x2 (Тёмный с зеленым акцентом)</h2>
+    <div class="widget-4x2">
+      <div class="header">
+        <img id="avatar-4x2" class="avatar" src="" alt="Avatar">
+        <div class="user-details">
+          <h3 id="username-4x2">Загрузка...</h3>
+          <span>Chess.com Profile</span>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="label">⚡ Rapid</span>
+          <span id="rapid-4x2" class="val rapid-color">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">🔥 Blitz</span>
+          <span id="blitz-4x2" class="val blitz-color">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">🎯 Bullet</span>
+          <span id="bullet-4x2" class="val bullet-color">-</span>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>Обновлено только что</span>
+        <button class="play-btn">Играть ⚡</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Твой никнейм на Chess.com
+    const USERNAME = "Azatonka"; 
+
+    async function loadWidgetData() {
+      try {
+        const profileRes = await fetch(`https://api.chess.com/pub/player/${USERNAME}`);
+        const profile = await profileRes.json();
+
+        const avatarUrl = profile.avatar || 'https://www.chess.com/bundles/web/images/user-image.svg';
+        document.getElementById('avatar-2x2').src = avatarUrl;
+        document.getElementById('avatar-4x2').src = avatarUrl;
+        
+        document.getElementById('username-2x2').innerText = profile.username || USERNAME;
+        document.getElementById('username-4x2').innerText = profile.username || USERNAME;
+
+        const statsRes = await fetch(`https://api.chess.com/pub/player/${USERNAME}/stats`);
+        const stats = await statsRes.json();
+
+        const rapid = stats.chess_rapid?.last?.rating || 'N/A';
+        const blitz = stats.chess_blitz?.last?.rating || 'N/A';
+        const bullet = stats.chess_bullet?.last?.rating || 'N/A';
+
+        document.getElementById('rapid-2x2').innerText = rapid;
+        document.getElementById('blitz-2x2').innerText = blitz;
+        document.getElementById('bullet-2x2').innerText = bullet;
+
+        document.getElementById('rapid-4x2').innerText = rapid;
+        document.getElementById('blitz-4x2').innerText = blitz;
+        document.getElementById('bullet-4x2').innerText = bullet;
+
+      } catch (err) {
+        console.error("Ошибка загрузки данных Chess.com:", err);
+      }
+    }
+
+    loadWidgetData();
+  </script>
+</body>
+</html>
