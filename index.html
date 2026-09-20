@@ -31,6 +31,16 @@
       margin-bottom: 10px;
     }
 
+    .mode-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 6px;
+      object-fit: contain;
+    }
+
     /* -------------------------------------------------- */
     /* 1. COMPACT WIDGET 2x2 (Brand Green Style)          */
     /* -------------------------------------------------- */
@@ -91,6 +101,8 @@
     .widget-2x2 .stat-label {
       font-size: 11px;
       opacity: 0.9;
+      display: flex;
+      align-items: center;
     }
 
     /* -------------------------------------------------- */
@@ -153,6 +165,8 @@
       font-size: 11px;
       color: #888;
       margin-bottom: 4px;
+      display: flex;
+      align-items: center;
     }
 
     .widget-4x2 .stat-item .val {
@@ -199,15 +213,21 @@
 
       <div class="stats-card">
         <div class="stat-row">
-          <span class="stat-label">⚡ Rapid</span>
+          <span class="stat-label">
+            <img src="rapid.jpg" class="mode-icon" alt="Rapid"> Rapid
+          </span>
           <span id="rapid-2x2">-</span>
         </div>
         <div class="stat-row">
-          <span class="stat-label">🔥 Blitz</span>
+          <span class="stat-label">
+            <img src="blitz.jpg" class="mode-icon" alt="Blitz"> Blitz
+          </span>
           <span id="blitz-2x2">-</span>
         </div>
         <div class="stat-row">
-          <span class="stat-label">🎯 Bullet</span>
+          <span class="stat-label">
+            <img src="bullet.jpg" class="mode-icon" alt="Bullet"> Bullet
+          </span>
           <span id="bullet-2x2">-</span>
         </div>
       </div>
@@ -228,15 +248,21 @@
 
       <div class="stats-row">
         <div class="stat-item">
-          <span class="label">⚡ Rapid</span>
+          <span class="label">
+            <img src="rapid.jpg" class="mode-icon" alt="Rapid"> Rapid
+          </span>
           <span id="rapid-4x2" class="val rapid-color">-</span>
         </div>
         <div class="stat-item">
-          <span class="label">🔥 Blitz</span>
+          <span class="label">
+            <img src="blitz.jpg" class="mode-icon" alt="Blitz"> Blitz
+          </span>
           <span id="blitz-4x2" class="val blitz-color">-</span>
         </div>
         <div class="stat-item">
-          <span class="label">🎯 Bullet</span>
+          <span class="label">
+            <img src="bullet.jpg" class="mode-icon" alt="Bullet"> Bullet
+          </span>
           <span id="bullet-4x2" class="val bullet-color">-</span>
         </div>
       </div>
@@ -249,7 +275,6 @@
   </div>
 
   <script>
-    // Your Chess.com username
     const USERNAME = "Azatonka"; 
 
     async function loadWidgetData() {
