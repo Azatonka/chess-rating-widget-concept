@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@
     }
 
     /* -------------------------------------------------- */
-    /* 1. КОМПАКТНЫЙ ВИДЖЕТ 2x2 (Фирменный Зелёный Стиль) */
+    /* 1. COMPACT WIDGET 2x2 (Brand Green Style)          */
     /* -------------------------------------------------- */
     .widget-2x2 {
       width: 170px;
@@ -94,7 +94,7 @@
     }
 
     /* -------------------------------------------------- */
-    /* 2. РАСШИРЕННЫЙ ВИДЖЕТ 4x2                         */
+    /* 2. DETAILED WIDGET 4x2                            */
     /* -------------------------------------------------- */
     .widget-4x2 {
       width: 360px;
@@ -160,7 +160,7 @@
       font-weight: 800;
     }
 
-    /* Акцентные цвета видов спорта */
+    /* Mode Accent Colors */
     .rapid-color { color: #81b64c; }
     .blitz-color { color: #ffb400; }
     .bullet-color { color: #e63946; }
@@ -188,40 +188,40 @@
 </head>
 <body>
 
-  <!-- Блок 1: Виджет 2х2 -->
+  <!-- Block 1: Widget 2x2 -->
   <div>
-    <h2>Виджет 2x2 (Фирменный Зеленый)</h2>
+    <h2>2x2 Widget (Live Overview)</h2>
     <div class="widget-2x2">
       <div class="header">
         <img id="avatar-2x2" class="avatar" src="" alt="Avatar">
-        <span id="username-2x2" class="username">Загрузка...</span>
+        <span id="username-2x2" class="username">Loading...</span>
       </div>
 
       <div class="stats-card">
         <div class="stat-row">
-          <span class="stat-label">⚡ Рапид</span>
+          <span class="stat-label">⚡ Rapid</span>
           <span id="rapid-2x2">-</span>
         </div>
         <div class="stat-row">
-          <span class="stat-label">🔥 Блиц</span>
+          <span class="stat-label">🔥 Blitz</span>
           <span id="blitz-2x2">-</span>
         </div>
         <div class="stat-row">
-          <span class="stat-label">🎯 Пуля</span>
+          <span class="stat-label">🎯 Bullet</span>
           <span id="bullet-2x2">-</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Блок 2: Виджет 4х2 -->
+  <!-- Block 2: Widget 4x2 -->
   <div>
-    <h2>Виджет 4x2 (Тёмный с зеленым акцентом)</h2>
+    <h2>4x2 Widget (Detailed Profile)</h2>
     <div class="widget-4x2">
       <div class="header">
         <img id="avatar-4x2" class="avatar" src="" alt="Avatar">
         <div class="user-details">
-          <h3 id="username-4x2">Загрузка...</h3>
+          <h3 id="username-4x2">Loading...</h3>
           <span>Chess.com Profile</span>
         </div>
       </div>
@@ -242,14 +242,14 @@
       </div>
 
       <div class="footer">
-        <span>Обновлено только что</span>
-        <button class="play-btn">Играть ⚡</button>
+        <span>Updated just now</span>
+        <button class="play-btn">Play Now ⚡</button>
       </div>
     </div>
   </div>
 
   <script>
-    // Твой никнейм на Chess.com
+    // Your Chess.com username
     const USERNAME = "Azatonka"; 
 
     async function loadWidgetData() {
@@ -280,7 +280,7 @@
         document.getElementById('bullet-4x2').innerText = bullet;
 
       } catch (err) {
-        console.error("Ошибка загрузки данных Chess.com:", err);
+        console.error("Error fetching Chess.com stats:", err);
       }
     }
 
